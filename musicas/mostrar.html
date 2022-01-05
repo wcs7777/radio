@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Músicas</title>
+		<base href="..">
+		<link rel="icon" type="image/png" href="img/logo.png" sizes="16x16">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/geral.css">
+		<link rel="stylesheet" type="text/css" href="css/musicas.css">
+	</head>
+	<body>
+		<header>
+			<nav class="menu">
+				<ul class="opcoes-menu">
+					<li><a class="opcao-menu playlist" href="playlists/mostrar.html">Playlists</a></li>
+					<li><a class="opcao-menu musica" href="musicas/mostrar.html">Músicas</a></li>
+					<li><a class="opcao-menu vinheta" href="vinhetas/mostrar.html">Vinhetas</a></li>
+					<li><a class="opcao-menu efeito-sonoro" href="efeitos-sonoros/mostrar.html">Efeitos Sonoros</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="conteudo musica">
+			<div class="acima-principal">
+				<div class="scroll">
+					<div id="etiquetas">
+						<ul></ul>
+					</div>
+				</div>
+				<div class="pesquisa-wrapper">
+					<div class="grupo-entrada">
+						<input id="pesquisa" class="entrada" type="text" placeholder="Nome da música">
+						<label class="label-entrada" for="pesquisa">Nome da música</label>
+					</div>
+				</div>
+			</div>
+			<div class="principal musica">
+				<aside id="opcoes-audio">
+					<div id="wrapper-esconder">
+						<ul class="lateral">
+							<li class="item"><a class="botao" href="playlists/criar.html">Adicionar Músicas</a></li>
+							<li class="item"><a class="botao" href="playlists/grade.html">Editar Várias</a></li>
+						</ul>
+						<div class="musica-filtros">
+							<ul>
+								<li id="opcao-filtrar" class="filtro"><button>Filtrar</button></li>
+								<li id="opcao-filtros" class="filtro"><button>Filtros</button></li>
+								<li id="opcao-limpar" class="filtro"><button>Limpar Filtros</button></li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+				<div class="tabela-scroll">
+					<table id="tabela-principal" class="tabela">
+						<colgroup>
+							<col style="width: 16em;">
+							<col style="width: 20em;">
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th id="musica-artista">Artista</th>
+								<th id="musica-titulo">Título</th>
+								<th id="musica-genero">Gênero</th>
+								<th id="musica-duracao">Duração</th>
+								<th class="opcoes">Opções</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+		<div id="formulario-musica" class="modal-wrapper musica escondido">
+			<div class="modal modal-formulario">
+				<div class="formulario-principal">
+					<div class="entradas">
+						<div class="entradas-principal">
+							<div class="grupo-entrada">
+								<input class="entrada" id="titulo" type="text" required placeholder="Título" />
+								<label class="label-entrada" for="titulo">Título</label>
+								<label class="entrada-erro" for="titulo">Por favor, informe o título!</label>
+							</div>
+							<div class="grupo-entrada">
+								<input class="entrada" id="artista" type="text" required placeholder="Artista" />
+								<label class="label-entrada" for="artista">Artista</label>
+								<label class="entrada-erro" for="artista">Por favor, informe o artista!</label>
+							</div>
+							<div class="grupo-entrada">
+								<input class="entrada" id="genero" type="text" required placeholder="Gênero" />
+								<label class="label-entrada" for="genero">Gênero</label>
+								<label class="entrada-erro" for="genero">Por favor, informe o gênero da música!</label>
+							</div>
+							<div class="grupo-entrada">
+								<input class="entrada" id="gravadora" type="text" required placeholder="Gravadora" />
+								<label class="label-entrada" for="gravadora">Gravadora</label>
+								<label class="entrada-erro" for="gravadora">Por favor, informe a gravadora!</label>
+							</div>
+							<div class="grupo-entrada">
+								<input class="entrada" id="ano" type="text" required placeholder="Ano" pattern="\d{4}"/>
+								<label class="label-entrada" for="ano">Ano</label>
+								<label class="entrada-erro" for="ano">Por favor, informe o ano da música!</label>
+							</div>
+						</div>
+						<div class="entradas-outras">
+							<h2 class="tipo-filtro">Outras informações</h2>
+							<ul>
+								<li id="opcao-participante" class="filtro"><button>Participações</button></li>
+								<li id="opcao-compositor" class="filtro"><button>Compositores</button></li>
+								<li id="opcao-subgenero" class="filtro"><button>Subgêneros</button></li>
+								<li id="opcao-tempos" class="filtro"><button>Tempos</button></li>
+							</ul>
+						</div>
+					</div>
+						<div class="botoes-confirmacao">
+						<button id="descartar" class="botao botao-cancelar">Descartar</button>
+						<button id="salvar" class="botao botao-confirmar">Salvar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="formulario-participante" class="modal-wrapper musica escondido">
+			<div class="formulario-secundario modal modal-formulario">
+				<div>
+					<div class="entradas">
+						<div class="entradas-principal">
+							<div class="grupo-entrada">
+								<input class="entrada" id="participante" type="text" required placeholder="Nome do artista participante" />
+								<label class="label-entrada" for="participante">Nome do artista participante</label>
+								<label class="entrada-erro" for="participante">Por favor, informe o artista participante!</label>
+							</div>
+							<table id="tabela-participante" class="tabela">
+								<thead>
+									<tr>
+										<th>Artista participante</th>
+										<th>Remover</th>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+						<div class="botoes-confirmacao">
+						<button id="voltar-participante" class="botao botao-confirmar">Voltar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="formulario-compositor" class="modal-wrapper musica escondido">
+			<div class="formulario-secundario modal modal-formulario">
+				<div>
+					<div class="entradas">
+						<div class="entradas-principal">
+							<div class="grupo-entrada">
+								<input class="entrada" id="compositor" type="text" required placeholder="Nome do compositor" />
+								<label class="label-entrada" for="compositor">Nome do compositor</label>
+								<label class="entrada-erro" for="compositor">Por favor, informe o compositor!</label>
+							</div>
+							<table id="tabela-compositor" class="tabela">
+								<thead>
+									<tr>
+										<th>Compositor</th>
+										<th>Remover</th>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+						<div class="botoes-confirmacao">
+						<button id="voltar-compositor" class="botao botao-confirmar">Voltar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="formulario-subgenero" class="modal-wrapper musica escondido">
+			<div class="formulario-secundario modal modal-formulario">
+				<div>
+					<div class="entradas">
+						<div class="entradas-principal">
+							<div class="grupo-entrada">
+								<input class="entrada" id="subgenero" type="text" required placeholder="Subgênero" />
+								<label class="label-entrada" for="subgenero">Subgênero</label>
+								<label class="entrada-erro" for="subgenero">Por favor, informe o subgênero!</label>
+							</div>
+							<table id="tabela-subgenero" class="tabela">
+								<thead>
+									<tr>
+										<th>Subgênero</th>
+										<th>Remover</th>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+						<div class="botoes-confirmacao">
+						<button id="voltar-subgenero" class="botao botao-confirmar">Voltar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="formulario-tempos" class="modal-wrapper musica escondido">
+			<div class="formulario-secundario modal modal-formulario">
+				<div>
+					<div class="entradas">
+						<div class="entradas-principal">
+							<div class="grupo-entrada">
+								<input class="entrada" id="compositor" type="text" required placeholder="Nome do compositor" />
+								<label class="label-entrada" for="compositor">Nome do compositor</label>
+								<label class="entrada-erro" for="compositor">Por favor, informe o compositor!</label>
+							</div>
+							<table id="tabela-participantes" class="tabela">
+								<thead>
+									<tr>
+										<th>Compositor</th>
+										<th>Remover</th>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+						<div class="botoes-confirmacao">
+						<button id="voltar-tempos" class="botao botao-confirmar">Voltar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>No ar agora: <span id="playlist-atual">As 100 mais tocadas</span></footer>
+		<script src="js/dados.js"></script>
+		<script src="js/formatos.js"></script>
+		<script src="js/elementos.js"></script>
+		<script src="js/tabela.js"></script>
+		<script src="js/playlists.js"></script>
+		<script src="js/playlists-criar.js"></script>
+		<script src="js/musicas.js"></script>
+		<script>
+				document.addEventListener('DOMContentLoaded', inicioMusicasMostrar);
+		</script>
+	</body>
+</html>

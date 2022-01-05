@@ -1,0 +1,127 @@
+.opcao-menu.musica {
+	box-shadow:
+		var(--bs-om-sizes-i) var(--cor-primaria) inset,
+		var(--bs-om-sizes) var(--cor-primaria);
+	color: var(--fonte-escura-focada);
+}
+
+.modal-excluir-musica {
+	width: 40em;
+	margin: 5em auto 0;
+
+	text-align: center;
+}
+
+.modal-excluir-musica .musica {
+	text-align: center;
+}
+
+.musica-filtros ul {
+	margin-top: 1.5em;
+}
+
+.musica #opcoes-audio {
+	margin-top: 0;
+	--width-em: 14em;
+}
+
+.principal #tabela-principal td {
+	color: var(--fonte-escura-focada);
+}
+
+.scroll {
+	width: var(--s-width);
+	height: var(--s-height);
+	margin: 0;
+	margin-right: 2em;
+	padding: 1px;
+
+	overflow: auto;
+	scrollbar-width: thin !important;
+	scrollbar-color: var(--cor-secundaria) rgba(10, 10, 10, .2) !important;
+	--s-width: 32em;
+	--s-height: 4em;
+}
+
+#etiquetas ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+
+	width: calc(var(--s-width) - 1px);
+	height: calc(var(--s-height) - 1px);
+
+	font-size: .7em;
+}
+
+.diminuicao-fonte {
+	font-size: .8em;
+}
+
+.aumento-largura {
+	width: calc(var(--width-em) + 13em);
+	margin: 0;
+	margin-right: 1em;
+
+	font-size: .8em;
+}
+
+.acima-principal {
+	display: flex;
+	align-items: flex-end;
+
+	width: 100%;
+	height: 4em;
+}
+
+.acima-principal .pesquisa-wrapper {
+	width: 60%;
+}
+
+.acima-principal .pesquisa-wrapper .grupo-entrada {
+	width: 100%;
+}
+
+.modal-formulario {
+	margin: 3em 9em;
+	padding-top: 2em;
+}
+
+.modal-formulario .entradas {
+	display: flex;
+	justify-content: end;
+	width: 100%;
+}
+
+.modal-formulario .entradas-principal .grupo-entrada {
+	width: 38em;
+	font-size: 1em;
+}
+
+.modal-formulario .entradas-outras {
+	margin: 2em 2em 0 5em;
+	font-size: .8em;
+}
+
+.modal-formulario .botoes-confirmacao {
+	width: 40em;
+	font-size: .9em;
+	margin: 1.2em 0 0 6.6em;
+}
+
+.formulario-secundario {
+	display: flex;
+	justify-content: center;
+}
+
+.formulario-secundario .entradas {
+	justify-content: center;
+}
+
+.formulario-secundario .tabela {
+	margin-top: 2em;
+}
+
+.formulario-secundario .botao-confirmar {
+	margin: 1em 8em 0 0;
+}

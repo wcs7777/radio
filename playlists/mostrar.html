@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Playlists</title>
+		<base href="..">
+		<link rel="icon" type="image/png" href="img/logo.png" sizes="16x16">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/geral.css">
+		<link rel="stylesheet" type="text/css" href="css/playlists.css">
+	</head>
+	<body>
+		<header>
+			<nav class="menu">
+				<ul class="opcoes-menu">
+					<li><a class="opcao-menu playlist" href="playlists/mostrar.html">Playlists</a></li>
+					<li><a class="opcao-menu musica" href="musicas/mostrar.html">Músicas</a></li>
+					<li><a class="opcao-menu vinheta" href="vinhetas/mostrar.html">Vinhetas</a></li>
+					<li><a class="opcao-menu efeito-sonoro" href="efeitos-sonoros/mostrar.html">Efeitos Sonoros</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="conteudo playlist">
+			<div class="pesquisa-wrapper">
+				<div class="grupo-entrada">
+					<input id="pesquisa" class="entrada" type="text" placeholder="Nome da playlist">
+					<label class="label-entrada" for="pesquisa">Nome da playlist</label>
+				</div>
+			</div>
+			<div class="principal">
+				<aside>
+					<ul class="lateral">
+						<li class="item"><a class="botao" href="playlists/criar.html">Criar Playlist</a></li>
+						<li class="item"><a class="botao" href="playlists/grade.html">Grade do dia</a></li>
+					</ul>
+				</aside>
+				<div class="tabela-scroll">
+					<table id="tabela-playlists" class="tabela">
+						<thead>
+							<tr>
+								<th id="playlist-nome">Nome</th>
+								<th id="playlist-data">Data e horário</th>
+								<th id="playlist-duracao">Duração</th>
+								<th class="opcoes">Opções</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+		<footer>No ar agora: <span id="playlist-atual">As 100 mais tocadas</span></footer>
+		<script src="js/dados.js"></script>
+		<script src="js/formatos.js"></script>
+		<script src="js/elementos.js"></script>
+		<script src="js/musicas.js"></script>
+		<script src="js/tabela.js"></script>
+		<script src="js/playlists.js"></script>
+		<script>
+			'use strict';
+			document.addEventListener('DOMContentLoaded', inicioPlaylistsMostrar);
+		</script>
+	</body>
+</html>

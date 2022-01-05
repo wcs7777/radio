@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Playlists - Criar</title>
+		<base href="..">
+		<link rel="icon" type="image/png" href="img/logo.png" sizes="16x16">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/geral.css">
+		<link rel="stylesheet" type="text/css" href="css/playlists.css">
+	</head>
+	<body>
+		<header>
+			<nav class="menu">
+				<ul class="opcoes-menu">
+					<li><a class="opcao-menu playlist" href="playlists/mostrar.html">Playlists</a></li>
+					<li><a class="opcao-menu musica" href="musicas/mostrar.html">Músicas</a></li>
+					<li><a class="opcao-menu vinheta" href="vinhetas/mostrar.html">Vinhetas</a></li>
+					<li><a class="opcao-menu efeito-sonoro" href="efeitos-sonoros/mostrar.html">Efeitos Sonoros</a></li>
+				</ul>
+		</header>
+		<main class="conteudo playlist">
+			<div class="principal">
+				<aside id="opcoes-audio">
+					<div id="etiquetas">
+						<ul></ul>
+					</div>
+					<div id="wrapper-esconder">
+						<h2 class="tipo-filtro">Tipos de áudios</h2>
+						<ul class="filtros">
+							<li class="filtro musica"><button id="musica">Músicas</button></li>
+							<li class="filtro programa"><button id="programa">Programas</button></li>
+							<li class="filtro comercial"><button id="comercial">Comerciais</button></li>
+							<li class="filtro vinheta"><button id="vinheta">Vinhetas</button></li>
+							<li class="filtro efeito-sonoro"><button id="efeito-sonoro">Efeitos Sonoros</button></li>
+						</ul>
+					</div>
+				</aside>
+				<div class="formulario">
+					<div class="grupo-entrada">
+						<input id="nome" class="entrada" type="text" placeholder="Nome da playlist" required>
+						<label class="label-entrada" for="nome">Nome da playlist</label>
+						<label class="entrada-erro invisivel" for="nome">Por favor, informe o nome da playlist!</label>
+					</div>
+					<div class="grupo-entrada">
+						<input id="data" class="entrada" type="text" pattern="(\d{2})\/(\d{2})\/(\d{4}) (\d{2}:\d{2})" placeholder="Irá ao ar em" required>
+						<label class="label-entrada" for="data">Irá ao ar em</label>
+						<label id="erro-data" class="entrada-erro invisivel" for="data">Por favor, informe quando a playlist irá ao ar!</label>
+					</div>
+					<div class="tabela-scroll tabela-principal">
+						<table id="tabela-principal" class="tabela">
+							<colgroup>
+								<col>
+								<col class="col-duracao">
+								<col class="col-opcoes">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>Título</th>
+									<th>Duração</th>
+									<th class="opcoes">Opções</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th>Duração total</th>
+									<td id="duracao-total">00:00:00</td>
+									<td></td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+					<div class="botoes-confirmacao">
+						<a href="playlists/mostrar.html" id="voltar" class="botao botao-cancelar">Voltar</a>
+						<button id="salvar" class="botao botao-confirmar">Salvar</button>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>No ar agora: <span id="playlist-atual">As 100 mais tocadas</span></footer>
+		<script src="js/dados.js"></script>
+		<script src="js/formatos.js"></script>
+		<script src="js/elementos.js"></script>
+		<script src="js/tabela.js"></script>
+		<script src="js/playlists.js"></script>
+		<script src="js/playlists-criar.js"></script>
+		<script src="js/musicas.js"></script>
+		<script>
+			'use strict';
+			const idPlaylist = false;
+			document.addEventListener('DOMContentLoaded', () => {
+				inicioPlaylistsCriar();
+			});
+		</script>
+	</body>
+</html>

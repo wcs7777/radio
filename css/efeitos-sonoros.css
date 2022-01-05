@@ -1,0 +1,6 @@
+.opcao-menu.efeito-sonoro {
+	box-shadow:
+		var(--bs-om-sizes-i) var(--cor-primaria) inset,
+		var(--bs-om-sizes) var(--cor-primaria);
+	color: var(--fonte-escura-focada);
+}

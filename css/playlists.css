@@ -1,0 +1,79 @@
+.opcao-menu.playlist {
+	box-shadow:
+		var(--bs-om-sizes-i) var(--cor-primaria) inset,
+		var(--bs-om-sizes) var(--cor-primaria);
+	color: var(--fonte-escura-focada);
+}
+
+.modal-excluir-playlist .tabela-scroll {
+	height: calc(var(--ts-height) - 3em);
+}
+
+.modal .musica {
+	--cor-primaria: var(--fonte-escura-focada);
+}
+
+#opcoes-audio {
+	min-width: var(--width-em);
+
+	margin: 1em 1em 0 0;
+
+	--width-em: 12em;
+}
+
+.tabela-scroll {
+	--ts-height: 26em;
+}
+
+.tabela-scroll col.col-duracao,
+.tabela-scroll col.col-opcoes {
+	width: 8em;
+}
+
+.tabela.tabela-sequencias td,
+#tabela-principal tbody td {
+	color: var(--cor-secundaria);
+}
+
+.tabela.tabela-sequencias tr.musica td,
+#tabela-principal tr.musica td {
+	color: var(--fonte-escura-focada);
+	border-bottom: 1px solid rgba(var(--cor-primaria-playlist), .44);
+}
+
+.tabela-scroll.tabela-principal tfoot th,
+.tabela-scroll.tabela-principal tfoot td {
+	position: sticky;
+	bottom: 0;
+}
+
+.tabela-scroll.tabela-principal tfoot th {
+	color: var(--fonte-clara-focada);
+	background-color: var(--cor-secundaria);
+
+	text-align: right;
+}
+
+.playlist-informacoes {
+	margin-bottom: .8em;
+
+	text-align: center;
+}
+
+.playlist-informacoes .termo {
+	color: var(--cor-secundaria);
+}
+
+#etiquetas ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+
+	width: 19em;
+	min-height: 8em;
+	margin: 0 2.2em 0 0;
+
+	background: none;
+
+	font-size: .7em;
+}

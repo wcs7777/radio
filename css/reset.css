@@ -1,0 +1,26 @@
+html, body, div, span, h1, a, img,
+ul, li, form, label, table, tbody,
+tfoot, thead, tr, th, td, header,
+nav, section, select, option,
+input, button {
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+body {
+	line-height: 1;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
